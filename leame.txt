@@ -1,0 +1,266 @@
+Packdir 2.0 by Geronimo Orozco Martinez <patux@linuxmail.org>
+Homepage: http://geocities.com/patux2/
+
+
+LICENCIA
+--------
+Esta licenciado bajo GNU GPL (ver archivo COPYNG )
+
+ACERCA DE  PACKDIR
+------------------
+Packdir es una base de datos grafica para MS-DOS, programada desde 0.
+Usa las librerias estandar de Borland Pascal 7.0
+
+CRT  
+DOS
+PRINTER
+GRAPH
+
+Ademas de los archivos de graficos de BP7.0
+
+Para monitores:
+HERC.BGI
+EGAVGA.BGI
+
+Para las fuentes:
+TRIP.CHR 
+LITT.CHR 
+SANS.CHR 
+BOLD.CHR
+LCOM.CHR
+SCRI.CHR
+SIMP.CHR
+TSCR.CHR
+EURO.CHR
+
+Ademas de las librerias que yo programe:
+
+PACKSOFT.PAS
+(La primer libreria que programe, es una libreria para texto en BP7,
+Menus,botones,Esciribir rapido,margenes, etc.etc.)
+
+WINDOWS.PAS
+Libreria para el uso de graficos en BP7 desde cursores graficos,botones,menus
+etc. notan que estaba influenciado por Mocosoft :P
+
+CODECOD.PAS
+Libreria para codificar el archivo de base de datos. 
+
+IMPRESOR.PAS
+Libreria para el uso de la impresora, checa si esta en linea, imprime en
+negritas, cursiva, etc. No llegue a imprimir letras graficas :(
+
+BGICHR.PAS
+Esta libreria incluye las letras y los monitores en el codigo ejecutable para no
+necesitar que donde quiera que se copie el programa no copiar tambien las libreria
+grafica y las letras y monitores. (Asi se incluye en el codigo y no ocupa esos archivos)
+
+
+HISTORIA
+--------
+Para hacer este programa y sus librerias me base en los libros de Turbo Pascal 7.0 
+de Joyanes Aguilar, y el Manual de referencia de Sthepen O'Brien.
+
+Este programa lo comenze en una maquina 286 a 20Mhz con 1Mb de RAM, al ver que
+ya no era posible hacer lo que yo queria que hiciera por la limitante del
+monitor Hercules, y la falta de memoria, lo termine en una magnifica y poderosisima
+486 a 66Mhz con 4Mb de RAM que estaba en la escuela :(
+Inicializa los graficos, revisando y asegurandose de que el monitor en el cual
+se este corriendo sea VGA, tambien checa si es Hercules y si lo es avisa que
+no es posible correrlo.
+Usa un algoritmo de encryptacion para la base de datos muy ligero de 8bits.
+o al menos eso creo :) ya que tengo 4 años sin  moverle nada al codigo.
+tambien la libreria que uso mas y estoy algo orgulloso de haberla hecho es la de
+Windows, particularmente el procedimiento LeerCursor para poder aceptar la entrada
+de texto grafico me saco canas verdes. Cuenta con un reloj que lee de la fecha
+del sistema, y tambien checa si el archivo de la base de datos esta para poder
+introducir datos, tambien tiene un protector de pantalla.,y pues solo
+es un tipo de agenda o directorio :P
+Lamentablemente no fui tan osado y me falto ponerle el codigo para usar mouse.
+si alguien se lo quiere agregar PERFECTO!!
+
+He decidido dejar este programa al publico porque siento que puede ayudarle
+a algunos estudiantes que estan estudiando programacion (pero no hagan
+caso al estilo de programacion que no es muy elegante) ademas que no lo condeno
+a la muerte (a pesar de que ya estaba enterrado por algo mas de 4 a¤os)
+lo acabo de sacar de la tumba, ya lo hacia perdido. pero afortunadamente
+lo tenia por ahi en un disco de 3 1/2 lleno de polvo. :P
+
+Lamento mucho que este programa no este bien documentado., salvo algunas
+referencias a algunos procedimientos etc., pero como dicen algunos que mejor
+documentacion que el codigo fuente :P  (Aunque no es una generalidad, se que
+si tuviera la documentacion precisa de las rutinas estaria perfecto pero yo
+en ese entonces solo me dedicaba a programar como loco y no documentaba nada,
+es mas ahorita mucho del codigo ni yo lo entiendo ahorita :P) Ya no lo estoy
+manteniendo ya tengo poco mas de 4 años sin moverle nada al codigo.
+Pero igual pueden escirbirme si tienen alguna duda.
+
+Este programa tambien tiene un programa de instalacion que se llama instalpd.pas
+la finalidad de este solo es farolear., jeje ya que tambien es grafico.
+
+Lo que hace el instalador es:
+1.- Pregunta el directorio de origen y destino
+2.- Si el directorio destino no se encuentra lo crea.
+3.- Copia el archivo PACKDIR.VGA a el directorio destino como PACKDIR.EXE
+4.- Al terminar el instalador y salir de el se encontrara ya en el directorio destino
+   
+Aclaro que todo esto era cuando los archivos solo tenian un nombre con formato
+8.3  8 caracteres para el nombre y 3 para la extencion igual para los subdirectorios.
+
+
+COMPILACION E INSTALACION:
+--------------------------
+
+Para compilar este programa necesitas correr primero el archivo:
+TRANSFOR.BAT en el directorio donde esten los arhivos de monitores y letras antes
+mensionados., tambien tiene que estar en el directorio el archivo binobj.exe
+que viene con el BP7 esto para pasarlos a archivos .obj y poderlos agregar
+a el programa en la compilacion.
+Quiero aclarar tambien que si usan el programa turbo.exe para correr y compilar
+programas en pascal no les va a servir para compilarlo en el disco porque la
+memoria se agotara., en todo caso ocuparian de 2 opcioneas para compilarlo:
+
+1- El compilador en linea: TPC
+2- El IDE igual que el turbo.exe pero que toma memoria extendida: BP.EXE
+
+Estos dos tambien vienen con el BP7.
+
+
+CON BP.EXE  (un IDE como TURBO.EXE)
+-----------------------------------
+
+USANDO COMO DIRECTORIOS:
+PARA LAS LIBRERIAS
+C:\BP7\UNITS
+C:\BP7\PACKDIR
+PARA LOS OBJETOS
+C:\BP7\BGI
+Y PARA LOS PROGRAMAS FUENTE:
+C:\BP7\PACKDIR
+
+Primero que nada en el Menu File - ChangeDir
+cambiarse al directorio C:\BP7\PACKDIR
+
+
+En el Menu Options-Directories
+agregar en donde Object Directories el directorio en donde corrieron
+el TRANSFOR.BAT p.ej: si fue en
+
+        c:\bp7\bgi\
+
+agregar esa linea.
+
+tambien agregar en: EXE & TPU Directories; el directiorio donde estan las
+librerias que yo programe: p.ej: is lo puso en el directorio:
+
+        c:\bp7\packdir\
+
+agregarla cuidando de no borrar lo que estaba antes, p.ej: si estaba:
+
+        c:\bp7\units
+
+modificarla asi:
+
+        c:\bp7\units;c:\bp7\packdir
+
+y asi no tendra problema cuando el BP7 pregunte por sus librerias estandar.
+
+Para compilarlo en el menu Compile - Target asegurarse que este en
+modo Real para que lo haga en el disco.
+
+En el Menu-Compile, ejecutar Make. o F9 para compilaro.
+y ya tendra su programa.exe
+
+CON TPC (Compilador en linea)
+------------------------------
+
+Usando como directorios:
+Para las librerias:
+
+        C:\BP7\UNITS
+        C:\BP7\PACKDIR
+
+Para los objetos:
+
+        C:\BP7\BGI
+y para los programas fuente:
+
+        C:\BP7\PACKDIR
+
+Copiar de C:\BP7\BIN\  los archivos TPC.EXE y TURBO.TPL  a C:\BP7\PACKDIR
+despues cambiarse de directorio a C:\BP7\PACKDIR
+y ejecutar:
+
+C:\BP7\PACKDIR\TPC -UC:\BP7\UNITS;C:\BP7\PACKDIR -OC:\BP7\BGI -B PACKDIR.PAS
+
+Saldra algo como lo siguiente:
+
+ Turbo Pascal  Version 7.0  Copyright (C) 1983,92 Borland International
+ PACKSOFT.PAS(1930)
+ WINDOWS.PAS(1098)
+ IMPRESORA.PAS(112)
+ CODECOD.PAS(214)
+ MONITORE.PAS(22)
+ LETRAS1.PAS(33)
+ LETRAS2.PAS(28)
+ BGICHR.PAS(43)
+ PACKDIR.PAS(1038)
+ 4518 LINES, 0.8 SECONDS, 175168 BYTES CODE, 40886 BYTES DATA.
+
+Asi que ahora veremos si de verdad se compilo y creo el archivo.exe con:
+
+        C:\BP7\PACKDIR>DIR .EXE
+
+ El volumen de la unidad C es FENIX
+ El n£mero de serie del volumen es 0B13-14FF
+ Directorio de C:\BP7\PACKDIR
+
+   TPC      EXE        75,400  27/10/92  7:00a TPC.EXE
+   PACKDIR  EXE       181,968  13/11/00 12:14p PACKDIR.EXE
+            2 archivo(s)            257,368 bytes
+                     0 directorio(s)   1,459,122,176 bytes libres
+
+Asi que ya esta compilado el programa.
+
+Si queremos compilar tambien el programa instalador solo hacemos algo
+mas o menos igual, y tendremos:
+
+ C:\BP7\PACKDIR>TPC -UC:\BP7\UNITS;C:\BP7\PACKDIR -OC:\BP7\BGI -B INSTALPD.PAS
+ Turbo Pascal  Version 7.0  Copyright (c) 1983,92 Borland International
+ PACKSOFT.PAS(1930)
+ WINDOWS.PAS(1098)
+ CODECOD.PAS(214)
+ MONITORES.PAS(22)
+ LETRAS1.PAS(33)
+ LETRAS2.PAS(28)
+ BGICHR.PAS(43)
+ INSTALPD.PAS(181)
+ 3549 lines, 0.2 seconds, 152880 bytes code, 3158 bytes data.
+
+Ahora veremos los archivos ejecutables:
+
+ C:\BP7\PACKDIR>dir .exe
+
+ El volumen de la unidad C es FENIX
+ El n£mero de serie del volumen es 0B13-14FF
+ Directorio de C:\BP7\PACKDIR
+
+
+ TPC      EXE        75,400  27/10/92  7:00a TPC.EXE
+ PACKDIR  EXE       181,968  13/11/00 12:14p PACKDIR.EXE
+ INSTALPD EXE       155,920  13/11/00 12:24p INSTALPD.EXE
+         3 archivo(s)            413,288 bytes
+                  0 directorio(s)   1,458,434,048 bytes libres
+
+y para que funcione el instalador renombramos el archivo PACKDIR.EXE a PACKDIR.VGA
+con:
+
+ C:BP7\PACKDIR\REN PACKDIR.EXE PACKDIR.VGA
+
+y ya es todo tenemos 2 archivos el instalador y el programa compilados.
+solo los copiamos a un diskette y ya tenemos la instalacion de packdir lista
+
+Personalmente yo recomiendo usar el compilador en linea TPC.
+
+Cualquier duda escirbir a patux@linuxmail.org
+(Espero pueda resolverla :P)
